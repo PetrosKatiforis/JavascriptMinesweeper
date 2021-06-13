@@ -1,7 +1,7 @@
 # Javascript Minesweeper
 
 A simple javascript implementation of Microsoft's minesweeper. <br/>
-Click the tiles and try to locate the bombs in order to complete the board
+Click the tiles and try to locate the bombs in order to complete the board <br/>
 You can find a live version here: https://javascript-minesweeper.netlify.app/
 
 ## Project Structure
