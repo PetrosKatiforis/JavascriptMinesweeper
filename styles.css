@@ -26,11 +26,22 @@ body {
 }
 
 @keyframes show_cell {
-  50%   { 
+  50% { 
       background-color: #3684f7;
   }
   100% { 
       background-color: #c2c9d4;
+  }
+}
+
+@keyframes show_bomb {
+  0% {
+      transform: scale(0);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1.1);
+      opacity: 1;
   }
 }
 
@@ -64,6 +75,10 @@ body {
 
 #board > [data-state="marked"]:after {
     content: "🚩️";
+}
+
+#board > [data-state="mine"] {
+    animation: show_bomb 200ms;
 }
 
 #board > [data-state="mine"]:after {
