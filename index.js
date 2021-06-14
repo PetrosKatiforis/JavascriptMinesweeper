@@ -12,7 +12,7 @@ const gameOptions = {
         x: 18,
         y: 12
     },
-    numberOfMines: 20
+    numberOfMines: 25
 }
 
 const board = createBoard(
