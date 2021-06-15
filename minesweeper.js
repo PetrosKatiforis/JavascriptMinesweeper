@@ -100,16 +100,18 @@ export function revealCell(cell, board) {
     // Otherwise, reveal it and count the nearby mines
     cell.state = CELL_STATES.NUMBER
     const nearbyCells = getNearbyCells(cell, board)
-    let mines = nearbyCells.filter(cell => cell.isMine)
+    const mines = nearbyCells.filter(cell => cell.isMine)
     
     // If it has no mines, reveal the neighbours too
     if (mines.length === 0) {
+        
         // Setting a delay of 20ms for the animation effect
         setTimeout(() => {
             nearbyCells.forEach(cell => {
                 revealCell(cell, board)
             })
         }, 20)
+        
     } else {
         // Otherwise, display the mine count
         cell.element.innerText = mines.length
@@ -122,6 +124,7 @@ function getNearbyCells(cell, board) {
     // Looping through the offsets for each exis
     for (let offsetX = -1; offsetX <= 1; offsetX++) {
         for (let offsetY = -1; offsetY <= 1; offsetY++) {
+            
             // ?. will prevent an index error and it will return "undefined" if it's not found
             const nearbyCell = board[cell.y + offsetY]?.[cell.x + offsetX]
             
